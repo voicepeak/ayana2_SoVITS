@@ -90,7 +90,8 @@ huggingface-cli download Vociepeak/ayana2_SoVITS --local-dir hf_ayana2
 ## 训练数据（简述）
 - 源素材：`0ayana纯享.wav`，约 **83.8 分钟** 单人日语
 - 处理：Whisper large-v3 **词级时间戳**（1075 段 / 12712 词）→ 按词/句边界切片、拼接句内静音、**丢弃英文段** → **1017 条**干净切片 → 精选 **538 条**（36.4 分钟）
-- 微调：v2Pro，SoVITS 8 epoch + GPT 15 epoch（RTX 4090）
+- 切片首尾留余量（0.12s/0.16s），避免切掉尾音
+- 微调：v2Pro，SoVITS 8 epoch + GPT 20 epoch（RTX 4090）
 
 ## 致谢
 - [GPT-SoVITS](https://github.com/RVC-Boss/GPT-SoVITS)（RVC-Boss）

@@ -58,8 +58,9 @@ GPU auto (RTF ≈ 0.12 on RTX 4090) or CPU (RTF ≈ 0.7–1.0). Force CPU with `
 
 ## Training
 - ~84 min single-speaker Japanese (`0ayana純享.wav`)
-- Word-level ASR (large-v3): 1075 segments / 12712 words → 1017 clean clips (English segments dropped) → 538 curated (36.4 min)
-- SoVITS 8 epochs, GPT 15 epochs, single RTX 4090
+- Word-level ASR (large-v3): 1075 segments / 12712 words → 1017 clean clips (English segments dropped) → 845 curated
+- Clips are padded 0.12 s (head) / 0.16 s (tail) so final phonemes are never clipped
+- SoVITS 8 epochs, GPT 20 epochs, single RTX 4090
 
 ## Language
 Japanese only.
